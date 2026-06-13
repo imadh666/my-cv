@@ -6,7 +6,7 @@ const crypto = require("crypto");
 //   require('crypto').createHash('sha256').update('YourNewPassword').digest('hex')
 // Current password: Dr@Academic2024!
 // ============================================================
-const PASSWORD_HASH = "a3f8d2e1b7c4e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4";
+const PASSWORD_HASH = "92fd7bace7a809d10d922fad764a08f288e50573598881a9c506e2039bcf47e8";
 
 // Token secret — change this to any long random string
 const TOKEN_SECRET = "xK9#mP2$vL5@nQ8&wR3!jH6*tF1^";
