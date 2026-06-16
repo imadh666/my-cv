@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dr. Heded Imad Eddine — PhD in Media & Communication, specializing in Audiovisual Studies. Researcher and Academic.">
+<meta name="keywords" content="PhD, Media Studies, Communication, Audiovisual, Academic, Research, Scientific Articles">
+<meta property="og:title" content="Dr. Heded Imad Eddine | Academic Portfolio">
+<meta property="og:description" content="PhD in Media & Communication — Audiovisual Specialization">
+<meta property="og:type" content="profile">
+<title>Dr. Heded Imad Eddine | Academic Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0D1B2A;
+  --navy-mid:   #162032;
+  --navy-light: #1E2D42;
+  --gold:       #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-pale:  #F5EDD0;
+  --white:      #FFFFFF;
+  --gray-100:   #F0F4F8;
+  --gray-200:   #D9E2EC;
+  --gray-400:   #9FB3C8;
+  --gray-600:   #627D98;
+  --blue-tag:   rgba(59,130,246,0.15);
+  --blue-text:  #60A5FA;
+  --green-tag:  rgba(16,185,129,0.15);
+  --green-text: #34D399;
+  --border:     rgba(201,168,76,0.2);
+  --shadow:     0 4px 24px rgba(13,27,42,0.12);
+  --shadow-lg:  0 8px 40px rgba(13,27,42,0.22);
+  --radius:     12px;
+  --radius-sm:  8px;
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Inter',sans-serif; background:var(--navy); color:var(--white); line-height:1.7; overflow-x:hidden; }
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--navy); }
+::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(13,27,42,0.96); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  height:64px; padding:0 2rem;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-brand { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--gold); font-weight:700; }
+.nav-links { display:flex; gap:0.2rem; list-style:none; align-items:center; }
+.nav-links a {
+  color:var(--gray-400); text-decoration:none; padding:0.4rem 0.85rem;
+  border-radius:6px; font-size:0.85rem; font-weight:500; transition:var(--transition);
+}
+.nav-links a:hover { color:var(--gold); background:rgba(201,168,76,0.08); }
+
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+.hamburger span { width:24px; height:2px; background:var(--gold); border-radius:2px; transition:var(--transition); }
+
+/* ── HERO ── */
+#hero {
+  min-height:100vh; padding:100px 2rem 70px;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 55%,#0A2340 100%);
+  display:flex; align-items:center; position:relative; overflow:hidden;
+}
+#hero::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Crect width='1' height='60'/%3E%3Crect width='60' height='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-container { max-width:1100px; margin:0 auto; width:100%; display:flex; align-items:center; gap:5rem; }
+
+/* Film-frame photo */
+.photo-frame { flex-shrink:0; position:relative; width:250px; height:295px; }
+.film-strip {
+  position:absolute; top:-18px; bottom:-18px; width:18px;
+  background:#111; display:flex; flex-direction:column;
+  justify-content:space-around; align-items:center; padding:8px 0; z-index:2;
+}
+.film-strip.left  { left:-18px; }
+.film-strip.right { right:-18px; }
+.film-hole { width:10px; height:8px; background:var(--gold); border-radius:2px; opacity:0.8; }
+.photo-wrapper { width:100%; height:100%; border:2px solid var(--gold); overflow:hidden; background:var(--navy-light); }
+.photo-wrapper img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.photo-label {
+  position:absolute; bottom:-28px; left:0; right:0; text-align:center;
+  font-size:0.6rem; color:var(--gold); letter-spacing:3px; font-weight:700; text-transform:uppercase;
+}
+
+/* Hero text */
+.hero-text { flex:1; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(201,168,76,0.1); border:1px solid var(--border);
+  padding:0.35rem 1rem; border-radius:20px;
+  font-size:0.78rem; color:var(--gold); font-weight:600; letter-spacing:0.5px;
+  margin-bottom:1.2rem;
+}
+.hero-badge::before { content:'▶'; font-size:0.55rem; }
+.hero-name {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.15;
+  margin-bottom:0.5rem;
+  background:linear-gradient(135deg,#fff 0%,var(--gold-pale) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hero-title { font-size:1rem; color:var(--gold); font-weight:600; margin-bottom:1.2rem; opacity:0.9; }
+.hero-bio { font-size:0.93rem; color:var(--gray-400); line-height:1.95; margin-bottom:1.6rem; max-width:500px; }
+
+/* Tags */
+.tags-wrap { display:flex; flex-wrap:wrap; gap:0.45rem; margin-bottom:1.8rem; }
+.tag {
+  background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25);
+  color:var(--gold-light); padding:0.28rem 0.75rem; border-radius:20px;
+  font-size:0.76rem; font-weight:600; transition:var(--transition); cursor:default;
+}
+.tag:hover { background:rgba(201,168,76,0.2); }
+
+/* Stats */
+.hero-stats {
+  display:flex; gap:2.5rem; padding:1.2rem 0;
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:1.8rem;
+}
+.stat-num { font-size:2rem; font-weight:900; color:var(--gold); display:block; line-height:1; }
+.stat-label { font-size:0.73rem; color:var(--gray-400); margin-top:0.2rem; font-weight:500; }
+
+/* Buttons */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gold); color:var(--navy); padding:0.72rem 1.5rem;
+  border-radius:var(--radius-sm); font-weight:700; font-size:0.88rem;
+  text-decoration:none; border:none; cursor:pointer; font-family:'Inter',sans-serif;
+  transition:var(--transition);
+}
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.3); }
+.btn-outline {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--gold); padding:0.72rem 1.5rem;
+  border-radius:var(--radius-sm); font-weight:600; font-size:0.88rem;
+  text-decoration:none; border:1px solid var(--gold); cursor:pointer; font-family:'Inter',sans-serif;
+  transition:var(--transition);
+}
+.btn-outline:hover { background:rgba(201,168,76,0.1); transform:translateY(-2px); }
+.hero-buttons { display:flex; gap:0.8rem; flex-wrap:wrap; }
+
+/* ── SECTIONS ── */
+section { padding:80px 2rem; }
+section:nth-child(even) { background:var(--navy-mid); }
+.container { max-width:1100px; margin:0 auto; }
+.section-header { text-align:center; margin-bottom:3.5rem; }
+.section-eyebrow { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:0.8rem; display:block; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.1rem); font-weight:800; color:var(--white); margin-bottom:0.8rem; }
+.section-line { width:60px; height:3px; background:var(--gold); margin:0 auto; border-radius:2px; }
+
+/* ── TIMELINE ── */
+.timeline { position:relative; padding-left:2rem; max-width:640px; margin:0 auto; }
+.timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--gold),transparent); }
+.timeline-item { position:relative; margin-bottom:2.2rem; padding-left:2.5rem; animation:fadeInLeft 0.6s ease forwards; opacity:0; }
+.timeline-item:nth-child(1){ animation-delay:0.1s; }
+.timeline-item:nth-child(2){ animation-delay:0.2s; }
+.timeline-item:nth-child(3){ animation-delay:0.3s; }
+.timeline-dot { position:absolute; left:-7px; top:6px; width:16px; height:16px; border-radius:50%; background:var(--gold); border:3px solid var(--navy); box-shadow:0 0 0 3px rgba(201,168,76,0.3); }
+.timeline-card { background:var(--navy-light); border:1px solid var(--border); border-radius:var(--radius); padding:1.3rem 1.5rem; transition:var(--transition); }
+.timeline-card:hover { border-color:var(--gold); transform:translateX(4px); }
+.timeline-year { font-size:0.75rem; color:var(--gold); font-weight:700; letter-spacing:1px; margin-bottom:0.3rem; }
+.timeline-degree { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:0.2rem; }
+.timeline-inst { font-size:0.85rem; color:var(--gray-400); }
+.timeline-badge { display:inline-block; background:rgba(201,168,76,0.15); color:var(--gold); font-size:0.7rem; padding:0.18rem 0.55rem; border-radius:4px; font-weight:600; margin-top:0.45rem; }
+
+/* ── WORKS ── */
+.works-tabs { display:flex; gap:0.5rem; justify-content:center; margin-bottom:2.5rem; flex-wrap:wrap; }
+.tab-btn { padding:0.45rem 1.3rem; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--gray-400); cursor:pointer; font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600; transition:var(--transition); }
+.tab-btn.active { background:var(--gold); color:var(--navy); border-color:var(--gold); }
+.tab-btn:hover:not(.active) { border-color:var(--gold); color:var(--gold); }
+.works-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
+.work-card { background:var(--navy-light); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--transition); position:relative; }
+.work-card:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.work-thumb { height:155px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; background:var(--navy); }
+.work-thumb img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+.work-thumb:hover img { transform:scale(1.05); }
+.work-placeholder { width:100%; height:100%; background:linear-gradient(135deg,var(--navy-mid),var(--navy-light)); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+.work-placeholder-icon { font-size:2.2rem; opacity:0.35; }
+.work-placeholder-text { font-size:0.65rem; color:var(--gray-400); letter-spacing:2px; text-transform:uppercase; }
+.type-badge { position:absolute; top:10px; left:10px; padding:0.18rem 0.55rem; border-radius:4px; font-size:0.68rem; font-weight:700; letter-spacing:0.4px; }
+.badge-article { background:var(--blue-tag); color:var(--blue-text); border:1px solid rgba(59,130,246,0.3); }
+.badge-conf { background:var(--green-tag); color:var(--green-text); border:1px solid rgba(16,185,129,0.3); }
+.work-body { padding:1.15rem; }
+.work-title { font-size:0.9rem; font-weight:700; color:var(--white); margin-bottom:0.45rem; line-height:1.5; }
+.work-meta { font-size:0.76rem; color:var(--gray-400); margin-bottom:0.9rem; }
+.work-link { display:inline-flex; align-items:center; gap:5px; color:var(--gold); font-size:0.8rem; font-weight:600; text-decoration:none; transition:var(--transition); }
+.work-link:hover { color:var(--gold-light); gap:9px; }
+
+/* ── CONFERENCES ── */
+.conf-list { display:flex; flex-direction:column; gap:1rem; }
+.conf-card { background:var(--navy-light); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem 1.4rem; display:flex; align-items:flex-start; gap:1.1rem; transition:var(--transition); position:relative; }
+.conf-card:hover { border-color:var(--gold); transform:translateX(4px); }
+.conf-icon { width:42px; height:42px; border-radius:10px; flex-shrink:0; background:rgba(201,168,76,0.12); display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
+.conf-name { font-size:0.93rem; font-weight:700; color:var(--white); margin-bottom:0.25rem; }
+.conf-meta { font-size:0.8rem; color:var(--gray-400); }
+.conf-link { color:var(--gold); font-size:0.78rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px; margin-top:0.35rem; transition:var(--transition); }
+.conf-link:hover { color:var(--gold-light); }
+
+/* ── CONTACT ── */
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.1rem; }
+.contact-card { background:var(--navy-light); border:1px solid var(--border); border-radius:var(--radius); padding:1.3rem; display:flex; align-items:center; gap:1rem; text-decoration:none; transition:var(--transition); color:inherit; }
+.contact-card:hover { border-color:var(--gold); transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.contact-icon { width:46px; height:46px; border-radius:11px; flex-shrink:0; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.2); display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+.contact-label { font-size:0.68rem; color:var(--gold); font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+.contact-value { font-size:0.85rem; color:var(--gray-200); font-weight:500; margin-top:0.1rem; word-break:break-all; }
+
+/* ── FOOTER ── */
+footer { background:#080F18; padding:1.8rem 2rem; text-align:center; border-top:1px solid var(--border); }
+.footer-text { font-size:0.8rem; color:var(--gray-600); }
+.footer-gold { color:var(--gold); }
+
+/* Animations */
+@keyframes fadeInLeft { from{opacity:0;transform:translateX(-20px);} to{opacity:1;transform:translateX(0);} }
+@keyframes fadeInUp   { from{opacity:0;transform:translateY(20px);}  to{opacity:1;transform:translateY(0);} }
+.fade-in { opacity:0; animation:fadeInUp 0.6s ease forwards; }
+.fade-in:nth-child(1){ animation-delay:0.1s; }
+.fade-in:nth-child(2){ animation-delay:0.2s; }
+.fade-in:nth-child(3){ animation-delay:0.3s; }
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-container { flex-direction:column; gap:2rem; text-align:center; align-items:center; }
+  .tags-wrap,.hero-stats,.hero-buttons { justify-content:center; }
+  .nav-links { display:none; position:fixed; top:64px; left:0; right:0; background:var(--navy-mid); flex-direction:column; padding:1rem; border-bottom:1px solid var(--border); }
+  .nav-links.open { display:flex; }
+  .hamburger { display:flex; }
+  .photo-frame { width:200px; height:240px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand" id="nav-brand">Dr. Heded Imad Eddine</span>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#timeline">Education</a></li>
+    <li><a href="#works">Publications</a></li>
+    <li><a href="#conferences">Conferences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-container">
+    <div class="photo-frame">
+      <div class="film-strip left">
+        <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+        <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      </div>
+      <div class="film-strip right">
+        <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+        <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+      </div>
+      <div class="photo-wrapper">
+        <img id="profile-photo" src="/photo.jpg" alt="Profile Photo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22295%22 viewBox=%220 0 250 295%22%3E%3Crect width=%22250%22 height=%22295%22 fill=%22%231E2D42%22/%3E%3Ctext x=%22125%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2260%22%3E👤%3C/text%3E%3C/svg%3E'">
+      </div>
+      <div class="photo-label">RESEARCHER · ACADEMIC · MEDIA SCHOLAR</div>
+    </div>
+
+    <div class="hero-text">
+      <div class="hero-badge">PhD in Media &amp; Communication</div>
+      <h1 class="hero-name" id="hero-name">Dr. Heded Imad Eddine</h1>
+      <p class="hero-title" id="hero-title">Audiovisual Specialization | Researcher &amp; Academic</p>
+      <p class="hero-bio" id="hero-bio">Holder of a PhD in Media and Communication Sciences, specializing in Audiovisual Studies. My research focuses on digital media transformations, audiovisual production, and media discourse analysis.</p>
+      <div class="tags-wrap" id="tags-wrap"></div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num" id="stat-articles">0</span><span class="stat-label">Articles</span></div>
+        <div class="stat-item"><span class="stat-num" id="stat-conf">0</span><span class="stat-label">Conferences</span></div>
+        <div class="stat-item"><span class="stat-num" id="stat-years">0</span><span class="stat-label">Years Experience</span></div>
+      </div>
+      <div class="hero-buttons">
+        <a href="#works" class="btn-primary">📄 Publications</a>
+        <a id="cv-btn" href="#" class="btn-outline">⬇ Download CV</a>
+        <a href="#contact" class="btn-outline">✉ Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Who I Am</span>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div style="max-width:720px;margin:0 auto;text-align:center;">
+      <p id="about-p1" style="font-size:0.97rem;color:var(--gray-200);line-height:2.05;margin-bottom:1.3rem;">
+        I am an academic researcher specializing in Media and Communication Sciences, holding a PhD with a focus on Audiovisual Studies. My scholarly interests center on the transformations of the media landscape in the digital age, the impact of technology on audiovisual production and reception, and methods of media discourse analysis.
+      </p>
+      <p id="about-p2" style="font-size:0.97rem;color:var(--gray-200);line-height:2.05;">
+        I contribute to academic literature through peer-reviewed articles and participation in national and international conferences, with a consistent focus on bridging media theory and applied research.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" style="background:var(--navy-mid);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Academic Journey</span>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline" id="timeline-list">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2020 – 2024</div>
+          <div class="timeline-degree">PhD in Media &amp; Communication Sciences</div>
+          <div class="timeline-inst">[University Name]</div>
+          <span class="timeline-badge">Audiovisual Specialization</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2017 – 2019</div>
+          <div class="timeline-degree">Master's in Media &amp; Communication Sciences</div>
+          <div class="timeline-inst">[University Name]</div>
+          <span class="timeline-badge">Audiovisual Specialization</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2013 – 2017</div>
+          <div class="timeline-degree">Bachelor's in Media &amp; Communication Sciences</div>
+          <div class="timeline-inst">[University Name]</div>
+          <span class="timeline-badge">Journalism</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Scientific Research</span>
+      <h2 class="section-title">Publications</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="works-tabs">
+      <button class="tab-btn active" onclick="filterWorks('all',this)">All</button>
+      <button class="tab-btn" onclick="filterWorks('article',this)">Articles</button>
+      <button class="tab-btn" onclick="filterWorks('conference',this)">Papers</button>
+    </div>
+    <div class="works-grid" id="works-grid"></div>
+    <div id="works-empty" style="display:none;text-align:center;padding:3rem;color:var(--gray-400);">
+      <div style="font-size:3rem;opacity:0.3;margin-bottom:1rem;">📄</div>
+      <p>No publications yet. Add your first work from the Admin panel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCES -->
+<section id="conferences" style="background:var(--navy-mid);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Academic Activity</span>
+      <h2 class="section-title">Conferences &amp; Symposia</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="conf-list" id="conf-list"></div>
+    <div id="conf-empty" style="display:none;text-align:center;padding:3rem;color:var(--gray-400);">
+      <div style="font-size:3rem;opacity:0.3;margin-bottom:1rem;">🎤</div>
+      <p>No conferences yet. Add your first participation from the Admin panel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2 class="section-title">Contact Information</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid" id="contact-grid">
+      <a class="contact-card" id="cc-phone" href="tel:" style="display:none">
+        <div class="contact-icon">📱</div>
+        <div><div class="contact-label">Phone</div><div class="contact-value" id="cv-phone"></div></div>
+      </a>
+      <a class="contact-card" id="cc-email" href="mailto:" style="display:none">
+        <div class="contact-icon">✉️</div>
+        <div><div class="contact-label">Personal Email</div><div class="contact-value" id="cv-email"></div></div>
+      </a>
+      <a class="contact-card" id="cc-email2" href="mailto:" style="display:none">
+        <div class="contact-icon">🎓</div>
+        <div><div class="contact-label">Professional Email</div><div class="contact-value" id="cv-email2"></div></div>
+      </a>
+      <a class="contact-card" id="cc-fb" href="#" target="_blank" style="display:none">
+        <div class="contact-icon">📘</div>
+        <div><div class="contact-label">Facebook</div><div class="contact-value" id="cv-fb"></div></div>
+      </a>
+      <a class="contact-card" id="cc-website" href="#" target="_blank" style="display:none">
+        <div class="contact-icon">🌐</div>
+        <div><div class="contact-label">Official Website</div><div class="contact-value" id="cv-website"></div></div>
+      </a>
+      <div id="contact-placeholder" style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--gray-400);">
+        <div style="font-size:3rem;opacity:0.3;margin-bottom:1rem;">📞</div>
+        <p>Add your contact information from the Admin panel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">&copy; <span id="footer-year"></span> <span class="footer-gold" id="footer-name">Dr. Heded Imad Eddine</span> — All Rights Reserved</p>
+  <p class="footer-text" style="margin-top:0.35rem;font-size:0.73rem;opacity:0.5;">PhD · Media &amp; Communication · Audiovisual Studies</p>
+</footer>
+
+<script>
+const DATA_API = '/.netlify/functions/data';
+
+// ── Data object (fallback if API unreachable) ────────────────
+let D = {
+  profile: { name:'Dr. Heded Imad Eddine', title:'Audiovisual Specialization | Researcher & Academic', bio:'', about1:'', about2:'', years:1 },
+  tags: [], works: [], conferences: [], contact: {}, cvLink: ''
+};
+
+// ── Fetch data from data.js on GitHub/Netlify ────────────────
+async function load() {
+  try {
+    const res = await fetch(DATA_API);
+    if (res.ok) D = await res.json();
+  } catch(e) { /* use fallback D */ }
+}
+
+// ================================================================
+// RENDER
+// ================================================================
+function renderAll() {
+  const p = D.profile;
+  document.getElementById('hero-name').textContent  = p.name;
+  document.getElementById('hero-title').textContent = p.title;
+  document.getElementById('hero-bio').textContent   = p.bio;
+  document.getElementById('about-p1').textContent   = p.about1;
+  document.getElementById('about-p2').textContent   = p.about2;
+  document.getElementById('nav-brand').textContent  = p.name;
+  document.getElementById('footer-name').textContent = p.name;
+  document.title = p.name + ' | Academic Portfolio';
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // Tags
+  document.getElementById('tags-wrap').innerHTML =
+    D.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+  // CV button
+  const cvBtn = document.getElementById('cv-btn');
+  if (D.cvLink) { cvBtn.href = D.cvLink; cvBtn.removeAttribute('onclick'); }
+  else { cvBtn.href = '#'; cvBtn.onclick = e => { e.preventDefault(); }; }
+
+  renderWorks();
+  renderConfs();
+  renderContact();
+  updateStats();
+}
+
+// ── Works ────────────────────────────────────────────────────
+let currentFilter = 'all';
+function filterWorks(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderWorks();
+}
+function renderWorks() {
+  const grid  = document.getElementById('works-grid');
+  const empty = document.getElementById('works-empty');
+  const list  = currentFilter === 'all' ? D.works : D.works.filter(w => w.type === currentFilter);
+  if (!list.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = list.map(w => `
+    <div class="work-card fade-in">
+      <div class="work-thumb">
+        ${w.thumb
+          ? `<img src="${w.thumb}" alt="${w.title}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             <div class="work-placeholder" style="display:none"><div class="work-placeholder-icon">${w.type==='article'?'📄':'🎤'}</div><div class="work-placeholder-text">${w.type==='article'?'ARTICLE':'PAPER'}</div></div>`
+          : `<div class="work-placeholder"><div class="work-placeholder-icon">${w.type==='article'?'📄':'🎤'}</div><div class="work-placeholder-text">${w.type==='article'?'ARTICLE':'PAPER'}</div></div>`}
+        <span class="type-badge ${w.type==='article'?'badge-article':'badge-conf'}">${w.type==='article'?'Article':'Paper'}</span>
+      </div>
+      <div class="work-body">
+        <div class="work-title">${w.title}</div>
+        <div class="work-meta">${w.journal||''}${w.year?' · '+w.year:''}</div>
+        ${w.link ? `<a class="work-link" href="${w.link}" target="_blank">View Publication →</a>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+// ── Conferences ──────────────────────────────────────────────
+function renderConfs() {
+  const list  = document.getElementById('conf-list');
+  const empty = document.getElementById('conf-empty');
+  if (!D.conferences.length) { list.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  list.innerHTML = D.conferences.map(c => `
+    <div class="conf-card">
+      <div class="conf-icon">🎤</div>
+      <div style="flex:1">
+        <div class="conf-name">${c.name}</div>
+        <div class="conf-meta">${c.place||''}${c.date?' · '+c.date:''}</div>
+        ${c.link ? `<a class="conf-link" href="${c.link}" target="_blank">View →</a>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+// ── Contact ──────────────────────────────────────────────────
+function renderContact() {
+  const ct = D.contact; let any = false;
+  function show(id, href, valId, val) {
+    const el = document.getElementById(id);
+    if (val && el) { el.href = href + val; document.getElementById(valId).textContent = val; el.style.display = 'flex'; any = true; }
+    else if (el) el.style.display = 'none';
+  }
+  show('cc-phone',   'tel:',     'cv-phone',   ct.phone);
+  show('cc-email',   'mailto:',  'cv-email',   ct.email);
+  show('cc-email2',  'mailto:',  'cv-email2',  ct.email2);
+  const fb = document.getElementById('cc-fb');
+  if (ct.fb) { fb.href = ct.fb; fb.style.display = 'flex'; document.getElementById('cv-fb').textContent = ct.fb.replace('https://facebook.com/',''); any = true; }
+  else if (fb) fb.style.display = 'none';
+  const ws = document.getElementById('cc-website');
+  if (ct.website) { ws.href = ct.website; ws.style.display = 'flex'; document.getElementById('cv-website').textContent = ct.website.replace('https://',''); any = true; }
+  else if (ws) ws.style.display = 'none';
+  document.getElementById('contact-placeholder').style.display = any ? 'none' : 'block';
+}
+
+// ── Stats counter ────────────────────────────────────────────
+function updateStats() {
+  animCount('stat-articles', D.works.filter(w => w.type === 'article').length);
+  animCount('stat-conf', D.works.filter(w => w.type === 'conference').length + D.conferences.length);
+  animCount('stat-years', D.profile.years || 0);
+}
+function animCount(id, target) {
+  const el = document.getElementById(id); if (!el) return;
+  let n = 0; const step = Math.max(1, Math.ceil(target / 30));
+  const t = setInterval(() => { n += step; if (n >= target) { n = target; clearInterval(t); } el.textContent = n; }, 40);
+}
+
+// ── Mobile menu ──────────────────────────────────────────────
+function toggleMenu() { document.getElementById('nav-links').classList.toggle('open'); }
+
+// ================================================================
+// INIT
+// ================================================================
+(async () => {
+  await load();
+  renderAll();
+})();
+</script>
+</body>
+</html>
